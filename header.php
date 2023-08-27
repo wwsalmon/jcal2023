@@ -11,7 +11,7 @@ wp_head();
 ?>
 </head>
 <body>
-    <div class="h-20 w-full sticky top-0 bg-tdark text-white">
+    <div class="h-20 w-full sticky top-0 bg-tdark text-white z-10">
         <div class="flex items-center w-full h-full border-t-8 box-border border-tyellow px-4">
             <p>A partnership between <a href="" class="text-tyellow">AAJA</a> and <a href="" class="text-tyellow">CalMatters</a></p>
             <div class="ml-auto flex items-center gap-6">

@@ -14,14 +14,14 @@
                 <div class="flex items-center gap-4">
                     <img src="<?php echo get_template_directory_uri() . "/img/calmatters-badge.png" ?>" class="h-16" alt=""/>
                     <a href="https://calmatters.org">calmatters.org</a>
-                    <a href=""><i class="fa-brands fa-twitter"></i>t</a>
-                    <a href=""><i class="fa-brands fa-instagram"></i>i</a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
                 </div>
                 <div class="flex items-center gap-4 mt-4 sm:mt-0 ml-auto">
                     <img src="<?php echo get_template_directory_uri() . "/img/aaja-badge.png"?>" class="h-16 sm:order-4" alt=""/>
                     <a href="https://calmatters.org">aaja.org</a>
-                    <a href=""><i class="fa-brands fa-twitter"></i>t</a>
-                    <a href=""><i class="fa-brands fa-instagram"></i>i</a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
             <div class="flex items-center font-bold gap-8 py-5 border-t border-[#6187AD] mt-5">
