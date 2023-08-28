@@ -51,4 +51,4 @@
                 <h2 class="text-tdark text-4xl font-black uppercase">Read more</h2>
             </div>
         <?php endif;?>
-<?php endwhile; ?>
+<?php endwhile; get_footer(); ?>
