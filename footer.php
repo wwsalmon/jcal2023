@@ -14,20 +14,20 @@
                 <div class="flex items-center gap-4">
                     <img src="<?php echo get_template_directory_uri() . "/img/calmatters-badge.png" ?>" class="h-16" alt=""/>
                     <a href="https://calmatters.org">calmatters.org</a>
-                    <a href=""><i class="fa-brands fa-twitter"></i></a>
-                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com/CalMatters"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/calmatters/"><i class="fa-brands fa-instagram"></i></a>
                 </div>
                 <div class="flex items-center gap-4 mt-4 sm:mt-0 ml-auto">
                     <img src="<?php echo get_template_directory_uri() . "/img/aaja-badge.png"?>" class="h-16 sm:order-4" alt=""/>
-                    <a href="https://calmatters.org">aaja.org</a>
-                    <a href=""><i class="fa-brands fa-twitter"></i></a>
-                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://aaja.org">aaja.org</a>
+                    <a href="https://twitter.com/aaja"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/aajaofficial/"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
             <div class="flex items-center font-bold gap-8 py-5 border-t border-[#6187AD] mt-5">
-                <a href="">Stories</a>
-                <a href="">People</a>
-                <a href="">About</a>
+                <a href="<?php echo home_url("/"); ?>">Stories</a>
+                <a href="<?php echo home_url("/people"); ?>">People</a>
+                <a href="<?php echo home_url("/about"); ?>">About</a>
             </div>
         </div>
     </div>
