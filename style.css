@@ -24,11 +24,12 @@ body {
 }
 
 .content-drop > p:first-child:first-letter {
-  font-size: 3.15em;
+  font-size: 80px;
   line-height: 1;
   font-weight: 700;
   margin-right: 4px;
   float: left;
+  color: #FEC44D;
 }
 
 .content p, li {

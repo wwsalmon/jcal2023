@@ -6,31 +6,33 @@
         <span class="font-semibold text-tyellow">Water and drought</span>
     </p>
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
-        <?php echo get_the_post_thumbnail( null, "full", array("class" => "max-w-3xl block mx-auto mb-16") )?>
-        <div class="max-w-2xl mx-auto text-center">
-            <h2 class="text-5xl leading-tight font-bold my-8"><?php the_title(); ?></h2>
-            <p class="opacity-50 text-xl my-8"><?php echo get_the_excerpt(); ?></p>
-            <div class="flex items-center justify-center gap-8 my-8">
-                <?php
-                $authors = get_coauthors();
-                foreach($authors as $author):
-                ?>
-                    <span class="font-bold opacity-50 uppercase"><?php echo $author->get("display_name"); ?></span>
-                <?php
-                endforeach;
-                // $published_url = get_post_meta(get_the_ID(), "published_url", true);
-                // $publication_name = get_post_meta(get_the_ID(), "publication_name", true);
-                $publication_logo = get_post_meta(get_the_ID(), "publication_logo", true);
-                if ($publication_logo):
-                    $publication_logo_url = wp_get_attachment_url($publication_logo);
-                ?>
-                    <div class="flex items-center">
-                        <span class="text-sm mr-2 opacity-50">Published with</span>
-                        <img src="<?php echo $publication_logo_url ?>" class="h-8 inline-block" alt=""/>
-                    </div>
-                <?php endif;?>
+        <a href="<?php the_permalink()?>">
+            <?php echo get_the_post_thumbnail( null, "full", array("class" => "max-w-3xl block mx-auto mb-16") )?>
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-5xl leading-tight font-bold my-8"><?php the_title(); ?></h2>
+                <p class="opacity-50 text-xl my-8"><?php echo get_the_excerpt(); ?></p>
+                <div class="flex items-center justify-center gap-8 my-8">
+                    <?php
+                    $authors = get_coauthors();
+                    foreach($authors as $author):
+                    ?>
+                        <span class="font-bold opacity-50 uppercase"><?php echo $author->get("display_name"); ?></span>
+                    <?php
+                    endforeach;
+                    // $published_url = get_post_meta(get_the_ID(), "published_url", true);
+                    // $publication_name = get_post_meta(get_the_ID(), "publication_name", true);
+                    $publication_logo = get_post_meta(get_the_ID(), "publication_logo", true);
+                    if ($publication_logo):
+                        $publication_logo_url = wp_get_attachment_url($publication_logo);
+                    ?>
+                        <div class="flex items-center">
+                            <span class="text-sm mr-2 opacity-50">Published with</span>
+                            <img src="<?php echo $publication_logo_url ?>" class="h-8 inline-block" alt=""/>
+                        </div>
+                    <?php endif;?>
+                </div>
             </div>
-        </div>
+        </a>
     <?php endwhile; endif; ?>
     <div class="max-w-6xl mx-auto px-4">
         <div class="bg-tyellow h-[6px] w-12 mt-16 mb-8"></div>
