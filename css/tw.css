@@ -488,6 +488,9 @@ video {
 .absolute {
   position: absolute;
 }
+.relative {
+  position: relative;
+}
 .sticky {
   position: sticky;
 }
@@ -561,6 +564,30 @@ video {
 }
 .mt-24 {
   margin-top: 6rem;
+}
+.-mt-24 {
+  margin-top: -6rem;
+}
+.-mt-4 {
+  margin-top: -1rem;
+}
+.-mt-\[14px\] {
+  margin-top: -14px;
+}
+.-mt-\[15px\] {
+  margin-top: -15px;
+}
+.-mt-12 {
+  margin-top: -3rem;
+}
+.-mt-20 {
+  margin-top: -5rem;
+}
+.-mt-\[8px\] {
+  margin-top: -8px;
+}
+.-mt-\[9px\] {
+  margin-top: -9px;
 }
 .box-border {
   box-sizing: border-box;
@@ -662,6 +689,15 @@ video {
 .whitespace-nowrap {
   white-space: nowrap;
 }
+.rounded {
+  border-radius: 0.25rem;
+}
+.rounded-md {
+  border-radius: 0.375rem;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
 .rounded-b-full {
   border-bottom-right-radius: 9999px;
   border-bottom-left-radius: 9999px;
@@ -734,6 +770,9 @@ video {
 .p-5 {
   padding: 1.25rem;
 }
+.p-8 {
+  padding: 2rem;
+}
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -769,6 +808,14 @@ video {
 .py-20 {
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 .text-center {
   text-align: center;
@@ -850,6 +897,9 @@ video {
 .leading-\[1\.15\] {
   line-height: 1.15;
 }
+.leading-snug {
+  line-height: 1.375;
+}
 .text-tdark {
   --tw-text-opacity: 1;
   color: rgb(17 17 17 / var(--tw-text-opacity));
@@ -903,6 +953,14 @@ video {
     margin-top: auto;
   }
 
+  .sm\:-mt-24 {
+    margin-top: -6rem;
+  }
+
+  .sm\:-mt-\[15px\] {
+    margin-top: -15px;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -925,6 +983,16 @@ video {
 
   .sm\:w-1\/2 {
     width: 50%;
+  }
+
+  .sm\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .sm\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .sm\:text-6xl {
@@ -950,6 +1018,11 @@ video {
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 @media (min-width: 768px) {

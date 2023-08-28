@@ -47,11 +47,27 @@ body {
   list-style: unset;
 }
 
-.content h2 {
+.content:not(.content-about) h2 {
   font-size: 2.8em;
   font-weight: 300;
   margin-top: 1.5em;
   line-height: 1.2;
+}
+
+.content-about h2 {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.content-about h2:before {
+  content: "";
+  display: block;
+  height: 6px;
+  width: 48px;
+  background-color: #2C5F93;
+  margin-bottom: 32px;
+  margin-top: 96px;
 }
 
 .content h3 {
