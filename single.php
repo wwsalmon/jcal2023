@@ -10,6 +10,13 @@
             $publication_logo_url = wp_get_attachment_url($publication_logo);
         ?>
             <div class="max-w-4xl mx-auto px-4">
+                <div class="w-full max-w-2xl mx-auto py-20 bg-[radial-gradient(closest-side,_var(--tw-gradient-stops))] from-tyellow to-transparent text-center">
+                    <p class="sm:text-xl uppercase !leading-[1.15]">
+                        <span class="font-light">2023 cohort</span>
+                        <br/>
+                        <a href="<?php echo home_url("/"); ?>" class="underline font-medium">Water and drought</a>
+                    </p>
+                </div>
                 <div class="flex items-center mt-8">
                     <span class="text-sm sm:text-base font-bold uppercase mr-2 text-tgray">Published with</span>
                     <img src="<?php echo $publication_logo_url ?>" class="h-6 sm:h-8 inline-block" alt=""/>
