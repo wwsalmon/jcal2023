@@ -18,3 +18,9 @@ add_action('wp_enqueue_scripts', 'script_enqueue');
 add_theme_support( 'post-thumbnails' );
 
 add_post_type_support( 'page', 'excerpt' );
+
+function add_testimonial_block() {
+    register_block_type(get_template_directory_uri() . "build/blocks/jcal-testimonial");
+}
+
+add_action("init", "add_testimonial_block");

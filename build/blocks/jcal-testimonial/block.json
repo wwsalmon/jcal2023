@@ -1,0 +1,6 @@
+{
+  "apiVersion": 3,
+  "title": "JCal testimonial",
+  "name": "jcal-testimonial",
+  "editorScript": "file:./index.js"
+}
