@@ -49,7 +49,7 @@ registerBlockType('jcal/testimonial', {
     },
     save: function ({attributes}) {
         return (
-            <div class="mb-8">
+            <div class="mb-8 max-w-2xl mx-auto">
                 <div class={`bg-${attributes.color} p-4 ${attributes.color === "tblue" ? "text-white" : "text-tgray"}`}>   
                     <RichText.Content tagName="span" value={attributes.quote}/>
                 </div>

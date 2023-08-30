@@ -1,0 +1,6 @@
+{
+    "apiVersion": 3,
+    "title": "JCal content",
+    "name": "jcal/content",
+    "editorScript": "file:./index.js"
+  }
