@@ -7,4 +7,7 @@
             <p class="text-tgray text-right mt-8 ml-auto w-64"><?php echo get_the_post_thumbnail_caption() ?></p>
         </div>
     </div>
+    <div class="max-w-3xl mx-auto px-4">
+        <?php the_content() ?>
+    </div>
 <?php endwhile; get_footer(); ?>
