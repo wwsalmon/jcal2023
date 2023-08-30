@@ -20,11 +20,11 @@ registerBlockType('jcal/testimonial', {
     edit: function ({attributes, setAttributes}) {
         const blockProps = useBlockProps();
 
-        const fullClassesForTw = "bg-tlightblue border-l-tlightblue border-t-tlightblue bg-tlightyellow border-l-tlightyellow border-t-tlightyellow";
+        const fullClassesForTw = "bg-tlightblue border-l-tlightblue border-t-tlightblue bg-tlightyellow border-l-tlightyellow border-t-tlightyellow bg-tblue border-l-tblue border-t-tblue";
 
         return (
             <div {...blockProps}>
-                <div class={`bg-${attributes.color} p-4 text-tgray`}>
+                <div class={`bg-${attributes.color} p-4 ${attributes.color === "tblue" ? "text-white" : "text-tgray"}`}>
                     <RichText tagName="span" value={attributes.quote} onChange={quote => setAttributes({quote})} placeholder="Enter the quote here..." allowedFormats={ [ 'core/bold' ] }/>
                 </div> 
                 <div className={`border-[12px] w-0 border-l-${attributes.color} border-t-${attributes.color} border-r-transparent border-b-transparent`}></div>
@@ -37,7 +37,8 @@ registerBlockType('jcal/testimonial', {
                         label="Color"
                         value={attributes.color}
                         options={[
-                            {label: "Blue", value: "tlightblue"},
+                            {label: "Light blue", value: "tlightblue"},
+                            {label: "Blue", value: "tblue"},
                             {label: "Yellow", value: "tlightyellow"},
                         ]}
                         onChange={color => setAttributes({color})}
@@ -49,7 +50,7 @@ registerBlockType('jcal/testimonial', {
     save: function ({attributes}) {
         return (
             <div class="mb-8">
-                <div class={`bg-${attributes.color} p-4 text-tgray`}>   
+                <div class={`bg-${attributes.color} p-4 ${attributes.color === "tblue" ? "text-white" : "text-tgray"}`}>   
                     <RichText.Content tagName="span" value={attributes.quote}/>
                 </div>
                 <div className={`border-[12px] w-0 border-l-${attributes.color} border-t-${attributes.color} border-r-transparent border-b-transparent`}></div>
