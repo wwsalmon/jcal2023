@@ -41,14 +41,14 @@
             <br/><br/>
             <span class="opacity-50">This year’s theme was </span><span class="font-bold">Water and Drought.</span>
         </p>
-        <a href="" class="bg-tyellow px-3 sm:text-xl py-2 uppercase font-black text-tdark inline-block">More about JCal</a>
+        <a href="<?php echo home_url("/about");?>" class="bg-tyellow px-3 sm:text-xl py-2 uppercase font-black text-tdark inline-block">More about JCal</a>
     </div>
     <div class="max-w-6xl mx-auto px-4">
         <div class="bg-tred h-[6px] w-12 mt-16 mb-8"></div>
         <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl !leading-snug mb-12">
             <span class="font-black text-tred">Veteran journalists from the Los Angeles Times, Bloomberg and CalMatters</span><span class="opacity-50"> edited stories and mentored JCal reporters at a one-week camp at CalMatters’ Sacramento newsroom.</span>
         </p>
-        <a href="" class="bg-tred px-3 sm:text-xl py-2 uppercase font-black inline-block">Meet the People of JCal</a>
+        <a href="<?php echo home_url("/people");?>" class="bg-tred px-3 sm:text-xl py-2 uppercase font-black inline-block">Meet the People of JCal</a>
     </div>
 </div>
 <?php get_footer();?>
