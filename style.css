@@ -47,6 +47,12 @@ body {
   list-style: unset;
 }
 
+.content h1 {
+  font-size: 36px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .content:not(.content-about) h2 {
   font-size: 2.8em;
   font-weight: 300;
