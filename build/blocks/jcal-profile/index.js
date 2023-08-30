@@ -229,7 +229,7 @@ const editFunction = ({
     attributes
   }) {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "mb-12 flex"
+      class: "mb-12 flex jcal-profile-block-bio-selector"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "w-20 sm:w-44 mr-6 flex-shrink-0"
     }, attributes.photo && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
@@ -243,10 +243,12 @@ const editFunction = ({
     }, attributes.name)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: "text-xl italic"
     }, attributes.organization)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "mt-5"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, attributes.bio)), (attributes.twitter || attributes.email) && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "mt-5 line-clamp-4 jcal-profile-block-bio"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, attributes.bio)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "mt-5 flex items-center"
-    }, attributes.twitter && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+      class: "text-xs text-tblue font-black uppercase mr-4 bio-expand-toggle-button"
+    }, "Full bio"), attributes.twitter && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
       href: attributes.twitter
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
       class: "fa-brands fa-twitter mr-4"

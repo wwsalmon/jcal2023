@@ -12,6 +12,7 @@ function script_enqueue()
     wp_enqueue_style('customstyle', get_template_directory_uri() . '/style.css', false, NULL, 'all' );
     wp_enqueue_style('twstyle', get_template_directory_uri() . '/css/tw.css', false, NULL, 'all' );
     wp_enqueue_style('fontawesome', "https://use.fontawesome.com/releases/v6.4.0/css/all.css", false, NULL, 'all' );
+    wp_enqueue_script("jcal-bio-expand", get_template_directory_uri() . "/js/bio-expand.js");
 }
 
 add_action('wp_enqueue_scripts', 'script_enqueue');
