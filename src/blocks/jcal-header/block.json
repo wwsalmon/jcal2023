@@ -1,0 +1,6 @@
+{
+    "apiVersion": 3,
+    "title": "JCal header",
+    "name": "jcal/header",
+    "editorScript": "file:./index.js"
+  }

@@ -798,6 +798,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(254 215 143 / var(--tw-bg-opacity));
 }
+.bg-tgray {
+  --tw-bg-opacity: 1;
+  background-color: rgb(62 62 63 / var(--tw-bg-opacity));
+}
 .bg-\[radial-gradient\(closest-side\2c _var\(--tw-gradient-stops\)\)\] {
   background-image: radial-gradient(closest-side, var(--tw-gradient-stops));
 }
@@ -891,6 +895,10 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .font-black {
   font-weight: 900;
