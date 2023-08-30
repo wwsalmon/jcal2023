@@ -14,7 +14,7 @@ $is_home = ($template_name === "index.php");
 ?>
 </head>
 <body>
-    <div class="h-20 w-full sticky top-0 <?php if ($is_home) echo "bg-tdark text-white"; else echo "bg-white";?> z-10">
+    <div class="h-20 w-full sticky top-0 <?php if ($is_home) echo "bg-tdark text-white"; else echo "bg-white";?> z-20">
         <div class="flex items-center w-full h-full border-t-8 box-border border-tyellow px-4">
             <p class="hidden sm:block"><span class="hidden lg:inline">A partnership between </span><a href="http://aaja.org/" class="<?php if ($is_home) echo "text-tyellow"; else echo "text-tblue" ?>">AAJA</a><span class="hidden lg:inline"> and </span><span class="inline lg:hidden"> / </span><a href="https://calmatters.org/youthjournalism/" class="<?php if ($is_home) echo "text-tyellow"; else echo "text-tblue" ?>">CalMatters</a></p>
             <div class="ml-auto md:flex items-center gap-6 hidden">

@@ -14,7 +14,10 @@ module.exports = {
             "tred": "#CF202F",
             "tgray": "#3E3E3F",
             "tdark": "#111111",
-        }
+        },
+        screens: {
+          "abt-880": "880px",
+        },
       },
     },
     plugins: [],
