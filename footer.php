@@ -12,7 +12,7 @@
                 </div>
                 <div class="sm:w-1/2 text-lg sm:flex flex-col items-end mt-6 sm:mt-0">
                     <p>Contact us at <a href="mailto:michael@calmatters.org" class="underline">michael@calmatters.org</a> or <a href="mailto:support@aaja.org" class="underline">support@aaja.org</a>.</p>
-                    <a class="py-1 px-2 bg-tyellow font-black text-tdark uppercase sm:mt-auto mt-6 inline-block" href="">Subscribe to aaja’s newsletter</a>
+                    <a class="py-1 px-2 bg-tyellow font-black text-tdark uppercase sm:mt-auto mt-6 inline-block" href="https://www.aaja.org/news-and-resources/newsletter-archives/">Subscribe to aaja’s newsletter</a>
                 </div>
             </div>
             <div class="sm:flex items-center my-6">
