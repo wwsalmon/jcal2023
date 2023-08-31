@@ -16,5 +16,6 @@
                 ?>
             </span>
         </div>
+        <?php get_template_part("template_parts/published-in"); ?>
     </div>
 </a>

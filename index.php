@@ -53,7 +53,7 @@
                     <div class="">
                         <h2 class="font-bold text-2xl !leading-[1.15] mb-2 sm:mb-4 lg:mb-6"><?php the_title() ?></h2>
                         <p class="opacity-50 mb-4 lg:mb-6"><?php echo get_the_excerpt(); ?></p>
-                        <div class="mb-6">
+                        <div class="mb-4 lg:mb-6">
                             <span class="font-bold uppercase">
                                 <?php
                                 $authors = get_coauthors();
@@ -64,6 +64,7 @@
                                 ?>
                             </span>
                         </div>
+                        <?php get_template_part("template_parts/published-in"); ?>
                     </div>
                 </a>
         <?php if ($i == 3 || ($i == $end_post_index)): ?>
