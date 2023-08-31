@@ -32,6 +32,12 @@ body {
   color: #FEC44D;
 }
 
+.content figcaption {
+  font-size: 14px;
+  color: #3E3E3F;
+  margin-top: 8px;
+}
+
 .content p, li {
   line-height: 1.6;
   margin: 1.6em 0;
