@@ -82,49 +82,41 @@
         <?php if ($i == 4): ?>
             <div class="max-w-6xl mx-auto px-4 md:px-0 mt-32" id="home-masonry-1">
         <?php endif; ?>
-                <a href="<?php the_permalink()?>" class="w-[calc(100%-32px)] -ml-4 md:ml-0 md:w-[calc(50%-32px)] flex md:block gap-4 md:[&:nth-child(2)]:pt-16">
-                    <div class="w-24 sm:w-40 md:w-full flex-shrink-0">
-                        <?php echo get_the_post_thumbnail( null, "full", array("class" => "w-full block mb-4 md:mb-8 aspect-[3/2] object-cover") )?>
-                    </div>
-                    <div class="">
-                        <h2 class="font-bold text-2xl md:text-3xl !leading-[1.15] mb-2 md:mb-8"><?php the_title() ?></h2>
-                        <p class="opacity-50 mb-4 md:mb-8 md:text-xl !leading-normal"><?php echo get_the_excerpt(); ?></p>
-                        <div class="mb-2 md:mb-8">
-                            <span class="font-bold uppercase">
-                                <?php
-                                $authors = get_coauthors();
-                                foreach($authors as $key=>$author) {
-                                    echo $author->get("display_name");
-                                    if ($key != (count($authors) - 1)) {echo ", ";}
-                                }
-                                ?>
-                            </span>
-                        </div>
-                    </div>
-                </a>
+            <?php get_template_part("template_parts/four-post"); ?>
             <?php if ($i == 4 && $i != $wp_query->post_count-1): ?>
                 <!-- <div class="hidden md:block w-[calc(50%-32px)] h-16"></div> -->
             <?php endif; ?>
         <?php if ($i == 7 || $i == $wp_query->post_count-1): ?>
             </div>
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="bg-tred h-[6px] w-12 mt-32 mb-8"></div>
+                <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl !leading-snug mb-12">
+                    <span class="font-black text-tred">Veteran journalists from the Los Angeles Times, Bloomberg and CalMatters</span><span class="opacity-50"> edited stories and mentored JCal reporters at a one-week camp at CalMatters’ Sacramento newsroom.</span>
+                </p>
+                <a href="<?php echo home_url("/people");?>" class="bg-tred px-3 sm:text-xl py-2 uppercase font-black inline-block">Meet the People of JCal</a>
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
+    <?php if ($i > 7): ?>
+        <?php if ($i == 8): ?>
+            <div class="max-w-6xl mx-auto px-4 md:px-0 mt-32" id="home-masonry-2">
+        <?php endif; ?>
+        <?php get_template_part("template_parts/four-post"); ?>
+        <?php if ($i == $wp_query->post_count-1): ?>
+            </div>
         <?php endif; ?>
     <?php endif; ?>
     <?php $i++; endwhile; endif; ?>
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="bg-tred h-[6px] w-12 mt-32 mb-8"></div>
-        <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl !leading-snug mb-12">
-            <span class="font-black text-tred">Veteran journalists from the Los Angeles Times, Bloomberg and CalMatters</span><span class="opacity-50"> edited stories and mentored JCal reporters at a one-week camp at CalMatters’ Sacramento newsroom.</span>
-        </p>
-        <a href="<?php echo home_url("/people");?>" class="bg-tred px-3 sm:text-xl py-2 uppercase font-black inline-block">Meet the People of JCal</a>
-    </div>
 </div>
 <script>
 // https://github.com/e-oj/Magic-Grid
 !function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):t.MagicGrid=e()}(this,function(){"use strict";var t=function(t){if(!t)throw new Error("No config object has been provided.");"boolean"!=typeof t.useTransform&&(t.useTransform=!0),"number"!=typeof t.gutter&&(t.gutter=25),t.container||e("container"),t.items||t.static||e("items or static")},e=function(t){throw new Error("Missing property '"+t+"' in MagicGrid config")},i=function(t){var e=t[0];for(var i of t)i.height<e.height&&(e=i);return e},n=function(e){t(e),e.container instanceof HTMLElement?(this.container=e.container,this.containerClass=e.container.className):(this.containerClass=e.container,this.container=document.querySelector(e.container)),this.items=this.container.children,this.static=e.static||!1,this.size=e.items,this.gutter=e.gutter,this.maxColumns=e.maxColumns||!1,this.useMin=e.useMin||!1,this.useTransform=e.useTransform,this.animate=e.animate||!1,this.started=!1,this.init()};return n.prototype.init=function(){if(this.ready()&&!this.started){this.container.style.position="relative";for(var t=0;t<this.items.length;t++){var e=this.items[t].style;e.position="absolute",this.animate&&(e.transition=(this.useTransform?"transform":"top, left")+" 0.2s ease")}this.started=!0}},n.prototype.colWidth=function(){return this.items[0].getBoundingClientRect().width+this.gutter},n.prototype.setup=function(){var t=this.container.getBoundingClientRect().width,e=this.colWidth(),i=Math.floor(t/e)||1,n=[];this.maxColumns&&i>this.maxColumns&&(i=this.maxColumns);for(var s=0;s<i;s++)n[s]={height:0,index:s};return{cols:n,wSpace:t-i*e+this.gutter}},n.prototype.nextCol=function(t,e){return this.useMin?i(t):t[e%t.length]},n.prototype.positionItems=function(){var t=this.setup(),e=t.cols,i=t.wSpace,n=0,s=this.colWidth();i=Math.floor(i/2);for(var o=0;o<this.items.length;o++){var r=this.nextCol(e,o),a=this.items[o],h=r.height?this.gutter:0,c=r.index*s+i+"px",u=r.height+h+"px";this.useTransform?a.style.transform="translate("+c+", "+u+")":(a.style.top=u,a.style.left=c),r.height+=a.getBoundingClientRect().height+h,r.height>n&&(n=r.height)}this.container.style.height=n+"px"},n.prototype.ready=function(){return!!this.static||this.items.length>=this.size},n.prototype.getReady=function(){var t=this,e=setInterval(function(){t.container=document.querySelector(t.containerClass),t.items=t.container.children,t.ready()&&(clearInterval(e),t.init(),t.listen())},100)},n.prototype.listen=function(){var t=this;if(this.ready()){var e;window.addEventListener("resize",function(){e||(e=setTimeout(function(){t.positionItems(),e=null},200))}),this.positionItems()}else this.getReady()},n});
 
 let mg1 = new MagicGrid({container: "#home-masonry-1", static: true, gutter: 32});
+let mg2 = new MagicGrid({container: "#home-masonry-2", static: true, gutter: 32});
 
 mg1.listen();
+mg2.listen();
 
 </script>
 <?php get_footer();?>
