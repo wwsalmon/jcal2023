@@ -24,12 +24,15 @@
                 <h1 class="text-4xl sm:text-6xl font-black !leading-[1.15] mt-8"><?php the_title() ?></h1>
                 <p class="text-xl sm:text-2xl text-tgray leading-normal mt-8"><?php echo get_the_excerpt() ?></p>
                 <div class="mt-8">
-                    <?php
-                            $authors = get_coauthors();
-                            foreach($authors as $author):
-                            ?>
-                                <span class="font-bold text-tblue uppercase"><?php echo $author->get("display_name"); ?></span>
-                            <?php endforeach; ?>
+                    <span class="font-bold text-tblue uppercase">
+                        <?php
+                        $authors = get_coauthors();
+                        foreach($authors as $key=>$author) {
+                            echo $author->get("display_name");
+                            if ($key != (count($authors) - 1)) {echo ", ";}
+                        }
+                        ?>
+                    </span>
                     <p class="text-tgray"><?php echo the_date("F j, Y"); ?></p>
                 </div>
                 <?php echo get_the_post_thumbnail( null, "full", array("class" => "w-full block mt-8")); ?>
@@ -48,7 +51,7 @@
             </div>
             <div class="max-w-4xl mx-auto px-4">
                 <div class="bg-tblue h-[6px] w-12 mt-24 mb-8"></div>
-                <h2 class="text-tblue text-4xl font-black uppercase">About the author</h2>
+                <h2 class="text-tblue text-4xl font-black uppercase">About the author<?php if (count($authors) > 1): echo "s"; endif; ?></h2>
                 <div class="content">
                     <?php foreach($authors as $author): $bio = $author->get("description");?>
                         <p><?php echo $bio; ?></p>

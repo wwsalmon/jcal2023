@@ -12,13 +12,16 @@
                 <h2 class="text-4xl md:text-5xl !leading-[1.15] font-bold my-8"><?php the_title(); ?></h2>
                 <p class="opacity-50 sm:text-xl my-8"><?php echo get_the_excerpt(); ?></p>
                 <div class="flex items-center justify-center gap-8 my-8 whitespace-nowrap flex-wrap">
+                    <span class="font-bold opacity-50 uppercase">
+                        <?php
+                        $authors = get_coauthors();
+                        foreach($authors as $key=>$author) {
+                            echo $author->get("display_name");
+                            if ($key != (count($authors) - 1)) {echo ", ";}
+                        }
+                        ?>
+                    </span>
                     <?php
-                    $authors = get_coauthors();
-                    foreach($authors as $author):
-                    ?>
-                        <span class="font-bold opacity-50 uppercase"><?php echo $author->get("display_name"); ?></span>
-                    <?php
-                    endforeach;
                     // $published_url = get_post_meta(get_the_ID(), "published_url", true);
                     // $publication_name = get_post_meta(get_the_ID(), "publication_name", true);
                     $publication_logo = get_post_meta(get_the_ID(), "publication_logo", true);
