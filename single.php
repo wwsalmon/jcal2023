@@ -64,5 +64,42 @@
                 </div>
                 <div class="bg-tdark h-[6px] w-12 mt-24 mb-8"></div>
                 <h2 class="text-tdark text-4xl font-black uppercase">Read more</h2>
+                <div class="md:flex gap-8 my-16">
+                    <?php
+                    $related_posts = get_posts(array("orderby" => "rand", "posts_per_page" => "3"));
+
+                    foreach ($related_posts as $related_post):
+                    ?>
+                        <a href="<?php echo get_the_permalink( $related_post->ID )?>" class="md:w-1/3 flex-shrink-0 flex md:block mb-12 sm:mb-0">
+                            <div class="w-24 sm:w-40 md:w-full flex-shrink-0 mr-4 sm:mr-0 mb-4">
+                                <?php echo get_the_post_thumbnail( $related_post->ID, "full", array("class" => "w-full block aspect-[3/2] object-cover=") )?>                            
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-4"><?php echo get_the_title($related_post->ID); ?></h3>
+                                <div><span class="font-bold uppercase text-tgray">
+                                    <?php
+                                    $authors = get_coauthors($related_post->ID);
+                                    foreach($authors as $key=>$author) {
+                                        echo $author->get("display_name");
+                                        if ($key != (count($authors) - 1)) {echo ", ";}
+                                    }
+                                    ?>
+                                </span></div>
+                                <?php
+                                $publication_logo = get_post_meta($related_post->ID, "publication_logo", true);
+
+                                if ($publication_logo):
+                                    $publication_logo_url = wp_get_attachment_url($publication_logo);
+                                    if ($publication_logo_url):
+                                ?>
+                                    <div class="mt-4 pt-4 border-t flex items-center gap-4">
+                                        <span class="text-tgray text-sm">Published with</span>
+                                        <img src="<?php echo $publication_logo_url ?>" alt="" class="h-6"/>
+                                    </div>
+                                <?php endif; endif; ?>
+                            </div>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
             </div>
 <?php endwhile; get_footer(); ?>
