@@ -18,7 +18,7 @@ $is_home = ($template_name === "index.php");
         <div class="flex items-center w-full h-full border-t-8 box-border border-tyellow px-4">
             <p class="hidden sm:block"><span class="hidden lg:inline">A partnership between </span><a href="http://aaja.org/" class="<?php if ($is_home) echo "text-tyellow"; else echo "text-tblue" ?>">AAJA</a><span class="hidden lg:inline"> and </span><span class="inline lg:hidden"> / </span><a href="https://calmatters.org/youthjournalism/" class="<?php if ($is_home) echo "text-tyellow"; else echo "text-tblue" ?>">CalMatters</a></p>
             <div class="ml-auto md:flex items-center gap-6 hidden">
-                <a href="<?php echo home_url("/search"); ?>"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="<?php echo home_url("/?s="); ?>"><i class="fa-solid fa-magnifying-glass"></i></a>
                 <a href="<?php echo home_url("/"); ?>" class="font-semibold">Stories</a>
                 <a href="<?php echo home_url("/people"); ?>" class="font-semibold">People</a>
                 <a href="<?php echo home_url("/about"); ?>" class="font-black uppercase px-2 py-1 bg-tyellow text-tdark">About<span class="hidden lg:inline"> JCal</span></a>
@@ -35,7 +35,7 @@ $is_home = ($template_name === "index.php");
         <div class="my-16 font-semibold">
             <a href="<?php echo home_url("/"); ?>" class="block mb-6">Stories</a>
             <a href="<?php echo home_url("/people"); ?>" class="block mb-6">People</a>
-            <a href="<?php echo home_url("/search"); ?>" class="block mb-6">Search</a>
+            <a href="<?php echo home_url("/?s="); ?>" class="block mb-6">Search</a>
             <a href="<?php echo home_url("/about"); ?>" class="inline-block font-black uppercase px-2 py-1 bg-tyellow text-tdark">About JCal</span></a>
     </div>
     </div>
