@@ -37,14 +37,5 @@ $is_home = ($template_name === "index.php");
             <a href="<?php echo home_url("/people"); ?>" class="block mb-6">People</a>
             <a href="<?php echo home_url("/?s="); ?>" class="block mb-6">Search</a>
             <a href="<?php echo home_url("/about"); ?>" class="inline-block font-black uppercase px-2 py-1 bg-tyellow text-tdark">About JCal</span></a>
+        </div>
     </div>
-    </div>
-    <script>
-        window.onload = () => {
-            const sidebar = document.getElementById("sidebar");
-            const sidebarOpen = document.getElementById("sidebar-open");
-            const sidebarClose = document.getElementById("sidebar-close");
-            sidebarOpen.onclick = () => sidebar.classList.remove("-mr-64");
-            sidebarClose.onclick = () => sidebar.classList.add("-mr-64");
-        }
-    </script>
