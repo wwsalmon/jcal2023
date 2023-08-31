@@ -1,4 +1,9 @@
-    <div class="w-full bg-tblue text-white border-b-8 border-tyellow">
+    <?php
+    global $template;
+    $template_name = basename($template);
+    $is_home = ($template_name === "index.php");
+    ?>
+    <div class="w-full text-white border-b-8 border-tyellow" style="background: radial-gradient(200vh 100% at bottom, #2C5F93 100%, <?php if ($is_home) echo "#111"; else echo "white" ?> 100%)">
         <div class="max-w-4xl mx-auto px-4">
             <img src="<?php echo get_template_directory_uri() . "/img/logo-white.svg";?>" alt="" class="w-32 mx-auto block py-12"/>
             <div class="sm:flex gap-8">
