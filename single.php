@@ -8,6 +8,9 @@
         $publication_logo = get_post_meta(get_the_ID(), "publication_logo", true);
         if ($publication_logo):
             $publication_logo_url = wp_get_attachment_url($publication_logo);
+        else:
+            $publication_logo_url = false;
+        endif;
         ?>
             <div class="max-w-4xl mx-auto px-4">
                 <div class="w-full max-w-2xl mx-auto py-20 bg-[radial-gradient(closest-side,_var(--tw-gradient-stops))] from-tyellow to-transparent text-center">
@@ -17,10 +20,12 @@
                         <a href="<?php echo home_url("/"); ?>" class="underline font-medium">Water and drought</a>
                     </p>
                 </div>
-                <div class="flex items-center mt-8">
-                    <span class="text-sm sm:text-base font-bold uppercase mr-2 text-tgray">Published with</span>
-                    <img src="<?php echo $publication_logo_url ?>" class="h-6 sm:h-8 inline-block" alt=""/>
-                </div>
+                <?php if ($publication_name & $publication_logo_url): ?>
+                    <div class="flex items-center mt-8">
+                        <span class="text-sm sm:text-base font-bold uppercase mr-2 text-tgray">Published with</span>
+                        <img src="<?php echo $publication_logo_url ?>" class="h-6 sm:h-8 inline-block" alt=""/>
+                    </div>
+                <?php endif; ?>
                 <h1 class="text-4xl sm:text-6xl font-black !leading-[1.15] mt-8"><?php the_title() ?></h1>
                 <p class="text-xl sm:text-2xl text-tgray leading-normal mt-8"><?php echo get_the_excerpt() ?></p>
                 <div class="mt-8">
@@ -60,5 +65,4 @@
                 <div class="bg-tdark h-[6px] w-12 mt-24 mb-8"></div>
                 <h2 class="text-tdark text-4xl font-black uppercase">Read more</h2>
             </div>
-        <?php endif;?>
 <?php endwhile; get_footer(); ?>
