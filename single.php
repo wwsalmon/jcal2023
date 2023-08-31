@@ -75,7 +75,7 @@
                                 <?php echo get_the_post_thumbnail( $related_post->ID, "full", array("class" => "w-full block aspect-[3/2] object-cover=") )?>                            
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold mb-4"><?php echo get_the_title($related_post->ID); ?></h3>
+                                <h3 class="text-xl font-bold mb-4"><?php if (get_post_meta($related_post->ID, "is_media_story", true)) echo "<i class='fa-solid fa-circle-play'></i> ";?><?php echo get_the_title($related_post->ID); ?></h3>
                                 <div><span class="font-bold uppercase text-tgray">
                                     <?php
                                     $authors = get_coauthors($related_post->ID);

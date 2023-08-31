@@ -9,7 +9,9 @@
 - for some reason php 8.x had errors? so use php 7.4 for now
 
 ## Plugins
-- ACF: add publication_name (text), published_url (url) and publication_logo (image) fields to posts
+- ACF
+    - Add field group "Republishing info", add publication_name (text), published_url (url) and publication_logo (image) fields to posts
+    - Add field group "Multimedia options", add is_media_story (true/false)
 - Coauthors Plus
 
 ## Adding users

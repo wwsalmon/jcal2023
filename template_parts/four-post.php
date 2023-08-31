@@ -3,7 +3,7 @@
         <?php echo get_the_post_thumbnail( null, "full", array("class" => "w-full block mb-4 md:mb-8 aspect-[3/2] object-cover") )?>
     </div>
     <div class="">
-        <h2 class="font-bold text-2xl md:text-3xl !leading-[1.15] mb-2 md:mb-8"><?php the_title() ?></h2>
+        <h2 class="font-bold text-2xl md:text-3xl !leading-[1.15] mb-2 md:mb-8"><?php if (get_post_meta(get_the_ID(), "is_media_story", true)) echo "<i class='fa-solid fa-circle-play'></i> ";?><?php the_title() ?></h2>
         <p class="opacity-50 mb-4 md:mb-8 md:text-xl !leading-normal"><?php echo get_the_excerpt(); ?></p>
         <div class="mb-2 md:mb-8">
             <span class="font-bold uppercase">

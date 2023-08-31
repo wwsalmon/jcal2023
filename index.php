@@ -14,7 +14,7 @@
         <a href="<?php the_permalink()?>">
             <?php echo get_the_post_thumbnail( null, "full", array("class" => "max-w-3xl w-full block mx-auto mb-16 aspect-[3/2] object-cover") )?>
             <div class="max-w-2xl mx-auto text-center px-4">
-                <h2 class="text-4xl md:text-5xl !leading-[1.15] font-bold my-8"><?php the_title(); ?></h2>
+                <h2 class="text-4xl md:text-5xl !leading-[1.15] font-bold my-8"><?php if (get_post_meta(get_the_ID(), "is_media_story", true)) echo "<i class='fa-solid fa-circle-play'></i> ";?><?php the_title(); ?></h2>
                 <p class="opacity-50 sm:text-xl my-8"><?php echo get_the_excerpt(); ?></p>
                 <div class="flex items-center justify-center gap-8 my-8 whitespace-nowrap flex-wrap">
                     <span class="font-bold opacity-50 uppercase">
@@ -51,7 +51,7 @@
                         <?php echo get_the_post_thumbnail( null, "full", array("class" => "w-full block mb-6 aspect-[3/2] object-cover") )?>
                     </div>
                     <div class="">
-                        <h2 class="font-bold text-2xl !leading-[1.15] mb-2 sm:mb-4 lg:mb-6"><?php the_title() ?></h2>
+                        <h2 class="font-bold text-2xl !leading-[1.15] mb-2 sm:mb-4 lg:mb-6"><?php if (get_post_meta(get_the_ID(), "is_media_story", true)) echo "<i class='fa-solid fa-circle-play'></i> ";?><?php the_title() ?></h2>
                         <p class="opacity-50 mb-4 lg:mb-6"><?php echo get_the_excerpt(); ?></p>
                         <div class="mb-4 lg:mb-6">
                             <span class="font-bold uppercase">
