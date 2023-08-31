@@ -11,7 +11,7 @@ while (have_posts()) :
                     </div>
                     <div class="border-[12px] w-0 border-l-white border-t-white border-r-transparent border-b-transparent"></div>
                     <div class="mt-4 text-sm text-white">
-                        <span class="uppercase font-bold">Clarissa Wing</span><br/><span>San Mateo County, CA</span>
+                        <span class="uppercase font-bold">Clarissa Wing</span><br/><span>San Mateo County</span>
                     </div>
                 </div>
                 <div class="md:w-1/3 mb-8">
@@ -20,7 +20,7 @@ while (have_posts()) :
                     </div>
                     <div class="border-[12px] w-0 border-l-tyellow border-t-tyellow border-r-transparent border-b-transparent"></div>
                     <div class="mt-4 text-sm text-white">
-                        <span class="uppercase font-bold">Maia Isabella Alvarez</span><br/><span>Los Angeles County, CA</span>
+                        <span class="uppercase font-bold">Maia Isabella Alvarez</span><br/><span>Los Angeles County</span>
                     </div>
                 </div>
                 <div class="hidden md:block md:w-1/3 mb-8">
@@ -29,7 +29,7 @@ while (have_posts()) :
                     </div>
                     <div class="border-[12px] w-0 border-l-white border-t-white border-r-transparent border-b-transparent"></div>
                     <div class="mt-4 text-sm text-white">
-                        <span class="uppercase font-bold">SARAH YEE</span><br/><span>Placer County, CA</span>
+                        <span class="uppercase font-bold">SARAH YEE</span><br/><span>Placer County</span>
                     </div>
                 </div>
             </div>

@@ -12,7 +12,7 @@
             </div>
             <div class="border-[12px] w-0 border-l-tblue border-t-tblue border-r-transparent border-b-transparent"></div>
             <div class="mt-4 text-sm text-tgray">
-                <span class="uppercase font-bold">Clarissa Wing</span><br/><span>San Mateo County, CA</span>
+                <span class="uppercase font-bold">Clarissa Wing</span><br/><span>San Mateo County</span>
             </div>
         </div>
     </div>
