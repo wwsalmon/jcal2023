@@ -44,9 +44,6 @@ $is_home = ($template_name === "index.php");
             const sidebar = document.getElementById("sidebar");
             const sidebarOpen = document.getElementById("sidebar-open");
             const sidebarClose = document.getElementById("sidebar-close");
-
-            console.log(sidebar, sidebarOpen, sidebarClose);
-
             sidebarOpen.onclick = () => sidebar.classList.remove("-mr-64");
             sidebarClose.onclick = () => sidebar.classList.add("-mr-64");
         }
