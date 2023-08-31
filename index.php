@@ -7,6 +7,7 @@
     </p>
     <?php
         $i = 0;
+        $end_post_index = $wp_query->post_count-1;
         if (have_posts()): while (have_posts()): the_post();
         if ($i == 0):
     ?>
@@ -65,16 +66,7 @@
                         </div>
                     </div>
                 </a>
-        <?php if ($i == 3 || ($i == $wp_query->post_count-1)): ?>
-            </div>
-            <div class="max-w-6xl mx-auto px-4">
-                <div class="bg-tyellow h-[6px] w-12 mt-32 mb-8"></div>
-                <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl !leading-snug mb-12">
-                    <span class="font-black text-tyellow">JCal empowers California students to tell the stories of their communities</span><span class="opacity-50"> by immersing them in the state’s news ecosystem through an all-inclusive, free summer program.</span>
-                    <br/><br/>
-                    <span class="opacity-50">This year’s theme was </span><span class="font-bold">Water and Drought.</span>
-                </p>
-                <a href="<?php echo home_url("/about");?>" class="bg-tyellow px-3 sm:text-xl py-2 uppercase font-black text-tdark inline-block">More about JCal</a>
+        <?php if ($i == 3 || ($i == $end_post_index)): ?>
             </div>
         <?php endif; ?>
     <?php endif; ?>
@@ -83,17 +75,10 @@
             <div class="max-w-6xl mx-auto px-4 md:px-0 mt-32" id="home-masonry-1">
         <?php endif; ?>
             <?php get_template_part("template_parts/four-post"); ?>
-            <?php if ($i == 4 && $i != $wp_query->post_count-1): ?>
+            <?php if ($i == 4 && $i != $end_post_index): ?>
                 <!-- <div class="hidden md:block w-[calc(50%-32px)] h-16"></div> -->
             <?php endif; ?>
-        <?php if ($i == 7 || $i == $wp_query->post_count-1): ?>
-            </div>
-            <div class="max-w-6xl mx-auto px-4">
-                <div class="bg-tred h-[6px] w-12 mt-32 mb-8"></div>
-                <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl !leading-snug mb-12">
-                    <span class="font-black text-tred">Veteran journalists from the Los Angeles Times, Bloomberg and CalMatters</span><span class="opacity-50"> edited stories and mentored JCal reporters at a one-week camp at CalMatters’ Sacramento newsroom.</span>
-                </p>
-                <a href="<?php echo home_url("/people");?>" class="bg-tred px-3 sm:text-xl py-2 uppercase font-black inline-block">Meet the People of JCal</a>
+        <?php if ($i == 7 || $i == $end_post_index): ?>
             </div>
         <?php endif; ?>
     <?php endif; ?>
@@ -102,9 +87,29 @@
             <div class="max-w-6xl mx-auto px-4 md:px-0 mt-32" id="home-masonry-2">
         <?php endif; ?>
         <?php get_template_part("template_parts/four-post"); ?>
-        <?php if ($i == $wp_query->post_count-1): ?>
+        <?php if ($i == $end_post_index): ?>
             </div>
         <?php endif; ?>
+    <?php endif; ?>
+    <?php if ($i == 3 || ((($i >= 1 & $i <= 3) || $end_post_index < 1) & $i == $end_post_index)): ?>
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="bg-tyellow h-[6px] w-12 mt-32 mb-8"></div>
+            <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl !leading-snug mb-12">
+                <span class="font-black text-tyellow">JCal empowers California students to tell the stories of their communities</span><span class="opacity-50"> by immersing them in the state’s news ecosystem through an all-inclusive, free summer program.</span>
+                <br/><br/>
+                <span class="opacity-50">This year’s theme was </span><span class="font-bold">Water and Drought.</span>
+            </p>
+            <a href="<?php echo home_url("/about");?>" class="bg-tyellow px-3 sm:text-xl py-2 uppercase font-black text-tdark inline-block">More about JCal</a>
+        </div>
+    <?php endif; ?>
+    <?php if ($i == 7 || ((($i >= 4 & $i <= 7) || $end_post_index < 4) & $i == $wp_query->post_count-1)): ?>
+        <div class="max-w-6xl mx-auto px-4">
+                <div class="bg-tred h-[6px] w-12 mt-32 mb-8"></div>
+                <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl !leading-snug mb-12">
+                    <span class="font-black text-tred">Veteran journalists from the Los Angeles Times, Bloomberg and CalMatters</span><span class="opacity-50"> edited stories and mentored JCal reporters at a one-week camp at CalMatters’ Sacramento newsroom.</span>
+                </p>
+                <a href="<?php echo home_url("/people");?>" class="bg-tred px-3 sm:text-xl py-2 uppercase font-black inline-block">Meet the People of JCal</a>
+            </div>
     <?php endif; ?>
     <?php $i++; endwhile; endif; ?>
 </div>
