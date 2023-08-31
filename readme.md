@@ -9,7 +9,6 @@
 - for some reason php 8.x had errors? so use php 7.4 for now
 
 ## Plugins
-- Classic editor
 - ACF: add publication_name (text), published_url (url) and publication_logo (image) fields to posts
 - Coauthors Plus
 
