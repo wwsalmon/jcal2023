@@ -40,3 +40,5 @@ add_action("init", "add_jcal_blocks");
 add_action("enqueue_block_editor_assets", function() {
     wp_enqueue_style('twstyle', get_template_directory_uri() . '/css/tw.css', false, NULL, 'all' );
 });
+
+add_filter("excerpt_length", function() {return 20;}, 999);
