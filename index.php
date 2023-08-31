@@ -5,9 +5,13 @@
         <br/>
         <span class="font-semibold text-tyellow">Water and drought</span>
     </p>
-    <?php if (have_posts()): while (have_posts()): the_post(); ?>
+    <?php
+        $i = 0;
+        if (have_posts()): while (have_posts()): the_post();
+        if ($i == 0):
+    ?>
         <a href="<?php the_permalink()?>">
-            <?php echo get_the_post_thumbnail( null, "full", array("class" => "max-w-3xl w-full block mx-auto mb-16") )?>
+            <?php echo get_the_post_thumbnail( null, "full", array("class" => "max-w-3xl w-full block mx-auto mb-16 aspect-[3/2] object-cover") )?>
             <div class="max-w-2xl mx-auto text-center px-4">
                 <h2 class="text-4xl md:text-5xl !leading-[1.15] font-bold my-8"><?php the_title(); ?></h2>
                 <p class="opacity-50 sm:text-xl my-8"><?php echo get_the_excerpt(); ?></p>
@@ -36,16 +40,45 @@
                 </div>
             </div>
         </a>
-    <?php endwhile; endif; ?>
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="bg-tyellow h-[6px] w-12 mt-16 mb-8"></div>
-        <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl !leading-snug mb-12">
-            <span class="font-black text-tyellow">JCal empowers California students to tell the stories of their communities</span><span class="opacity-50"> by immersing them in the state’s news ecosystem through an all-inclusive, free summer program.</span>
-            <br/><br/>
-            <span class="opacity-50">This year’s theme was </span><span class="font-bold">Water and Drought.</span>
-        </p>
-        <a href="<?php echo home_url("/about");?>" class="bg-tyellow px-3 sm:text-xl py-2 uppercase font-black text-tdark inline-block">More about JCal</a>
-    </div>
+    <?php endif; ?>
+    <?php if ($i >= 1 & $i < 4): ?>
+        <?php if ($i == 1): ?>
+            <div class="lg:flex gap-8 max-w-6xl mx-auto px-4 mt-32">
+        <?php endif; ?>
+                <a href="<?php the_permalink()?>" class="flex gap-4 lg:block lg:w-1/3 mb-8">
+                    <div class="w-24 sm:w-40 lg:w-full flex-shrink-0">
+                        <?php echo get_the_post_thumbnail( null, "full", array("class" => "w-full block mb-6 aspect-[3/2] object-cover") )?>
+                    </div>
+                    <div class="">
+                        <h2 class="font-bold text-2xl !leading-[1.15] mb-6"><?php the_title() ?></h2>
+                        <p class="opacity-50 mb-6"><?php echo get_the_excerpt(); ?></p>
+                        <div class="mb-6">
+                            <span class="font-bold uppercase">
+                                <?php
+                                $authors = get_coauthors();
+                                foreach($authors as $key=>$author) {
+                                    echo $author->get("display_name");
+                                    if ($key != (count($authors) - 1)) {echo ", ";}
+                                }
+                                ?>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+        <?php if ($i == 3): ?>
+            </div>
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="bg-tyellow h-[6px] w-12 mt-32 mb-8"></div>
+                <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl !leading-snug mb-12">
+                    <span class="font-black text-tyellow">JCal empowers California students to tell the stories of their communities</span><span class="opacity-50"> by immersing them in the state’s news ecosystem through an all-inclusive, free summer program.</span>
+                    <br/><br/>
+                    <span class="opacity-50">This year’s theme was </span><span class="font-bold">Water and Drought.</span>
+                </p>
+                <a href="<?php echo home_url("/about");?>" class="bg-tyellow px-3 sm:text-xl py-2 uppercase font-black text-tdark inline-block">More about JCal</a>
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
+    <?php $i++; endwhile; endif; ?>
     <div class="max-w-6xl mx-auto px-4">
         <div class="bg-tred h-[6px] w-12 mt-16 mb-8"></div>
         <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl !leading-snug mb-12">
