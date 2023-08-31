@@ -1,5 +1,5 @@
 <?php get_header();?>
-<div class="w-full bg-tdark text-white">
+<div class="w-full bg-tdark text-white pb-32">
     <p class="text-center py-16 text-xl uppercase">
         <span class="font-light">2023 cohort</span>
         <br/>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </a>
-        <?php if ($i == 3): ?>
+        <?php if ($i == 3 || ($i == $wp_query->post_count)): ?>
             </div>
             <div class="max-w-6xl mx-auto px-4">
                 <div class="bg-tyellow h-[6px] w-12 mt-32 mb-8"></div>
@@ -80,7 +80,7 @@
     <?php endif; ?>
     <?php $i++; endwhile; endif; ?>
     <div class="max-w-6xl mx-auto px-4">
-        <div class="bg-tred h-[6px] w-12 mt-16 mb-8"></div>
+        <div class="bg-tred h-[6px] w-12 mt-32 mb-8"></div>
         <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl !leading-snug mb-12">
             <span class="font-black text-tred">Veteran journalists from the Los Angeles Times, Bloomberg and CalMatters</span><span class="opacity-50"> edited stories and mentored JCal reporters at a one-week camp at CalMatters’ Sacramento newsroom.</span>
         </p>
