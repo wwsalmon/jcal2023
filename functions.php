@@ -26,6 +26,7 @@ function add_jcal_blocks() {
     wp_enqueue_script( "jcal-profile-js", get_template_directory_uri() . "/build/blocks/jcal-profile/index.js", array("wp-blocks", "wp-element", "wp-block-editor", "wp-components"));
     wp_enqueue_script( "jcal-header-js", get_template_directory_uri() . "/build/blocks/jcal-header/index.js", array("wp-blocks", "wp-element", "wp-block-editor", "wp-components"));
     wp_enqueue_script( "jcal-content-js", get_template_directory_uri() . "/build/blocks/jcal-content/index.js", array("wp-blocks", "wp-element", "wp-block-editor"));
+    wp_enqueue_script( "jcal-audio-js", get_template_directory_uri() . "/build/blocks/jcal-audio/index.js", array("wp-blocks", "wp-element", "wp-block-editor"));
     // register_block_type(get_template_directory_uri() . "build/blocks/jcal-testimonial");
 
     // wp_register_script( 'jcal-testimonial-js', get_template_directory_uri() . '/build/blocks/jcal-testimonial/index.js', array( 'wp-blocks' ));

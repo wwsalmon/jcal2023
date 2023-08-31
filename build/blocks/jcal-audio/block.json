@@ -1,0 +1,6 @@
+{
+  "apiVersion": 3,
+  "title": "JCal audio",
+  "name": "jcal/audio",
+  "editorScript": "file:./index.js"
+}

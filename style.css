@@ -23,7 +23,7 @@ body {
   }
 }
 
-.content-drop > p:first-child:first-letter {
+.content-drop > p:first-of-type:first-letter {
   font-size: 80px;
   line-height: 1;
   font-weight: 700;
@@ -107,4 +107,8 @@ body {
 .content blockquote, .content blockquote p {
   font-size: 24px;
   color: #2C5F93;
+}
+
+.wp-block-audio {
+  width: 100%;
 }
