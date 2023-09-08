@@ -4,8 +4,9 @@
     $is_home = ($template_name === "index.php");
     $is_audio = get_post_meta(get_the_ID(), "is_media_story", true);
     ?>
-    <div class="w-full text-white border-b-8 border-tyellow <?php if ($is_audio) echo "mb-16"?>" style="background: radial-gradient(150vh 100% at bottom, #2C5F93 100%, <?php if ($is_home) echo "#111"; else echo "white" ?> 100%)">
-        <div class="max-w-4xl mx-auto px-4">
+    <div class="w-full text-white border-b-8 border-tyellow relative <?php if ($is_audio) echo "mb-16"?> <?php if ($is_home) echo "bg-tdark"; else echo "bg-white" ?>">
+        <div class="absolute top-0 left-0 w-full h-full bg-tblue" id="footer-to-clip"></div>
+        <div class="max-w-4xl mx-auto px-4 relative">
             <img src="<?php echo get_template_directory_uri() . "/img/logo-white.svg";?>" alt="" class="w-32 mx-auto block py-12"/>
             <div class="sm:flex gap-8">
                 <div class="sm:w-1/2 text-lg">
@@ -36,5 +37,10 @@
                 <a href="<?php echo home_url("/about"); ?>">About</a>
             </div>
         </div>
+        <script>
+            const footer = document.getElementById("footer-to-clip");
+            const footerHeight = footer.getBoundingClientRect().height;
+            footer.style = `clip-path: ellipse(${3 * footerHeight}px 100% at 50% 100%)`
+        </script>
     </div>
 </body>
