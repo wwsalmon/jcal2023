@@ -20,7 +20,7 @@
                         <a href="<?php echo home_url("/"); ?>" class="underline font-medium">Water and drought</a>
                     </p>
                 </div>
-                <?php if ($publication_name & $publication_logo_url): ?>
+                <?php if (!empty($publication_name) & !empty($publication_logo_url)): ?>
                     <div class="flex items-center mt-8">
                         <span class="text-sm sm:text-base font-bold uppercase mr-2 text-tgray">Published with</span>
                         <img src="<?php echo $publication_logo_url ?>" class="h-6 sm:h-8 inline-block" alt=""/>
