@@ -96,9 +96,9 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="bg-tyellow h-[6px] w-12 mt-32 mb-8"></div>
             <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl !leading-snug mb-12">
-                <span class="font-black text-tyellow">JCal empowers California students to tell the stories of their communities</span><span class="opacity-50"> by immersing them in the state’s news ecosystem through an all-inclusive, free summer program.</span>
+                <span class="font-black text-tyellow"><?php echo get_theme_mod("jcal-home-1-1", "JCal empowers California students to tell the stories of their communities") ?></span><span class="opacity-50"> <?php echo get_theme_mod("jcal-home-1-2", "by immersing them in the state’s news ecosystem through an all-inclusive, free summer program.") ?></span>
                 <br/><br/>
-                <span class="opacity-50">This year’s theme was </span><span class="font-bold">Water and Drought.</span>
+                <span class="opacity-50">This year’s theme was </span><span class="font-bold"><?php echo get_theme_mod("jcal-home-1-3", "Water and Drought") ?>.</span>
             </p>
             <a href="<?php echo home_url("/about");?>" class="bg-tyellow px-3 sm:text-xl py-2 uppercase font-black text-tdark inline-block">More about JCal</a>
         </div>
@@ -107,7 +107,7 @@
         <div class="max-w-6xl mx-auto px-4">
                 <div class="bg-tred h-[6px] w-12 mt-32 mb-8"></div>
                 <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl !leading-snug mb-12">
-                    <span class="font-black text-tred">Veteran journalists from the Los Angeles Times, Bloomberg and CalMatters</span><span class="opacity-50"> edited stories and mentored JCal reporters at a one-week camp at CalMatters’ Sacramento newsroom.</span>
+                    <span class="font-black text-tred"><?php echo get_theme_mod("jcal-home-2-1", "Veteran journalists from the Los Angeles Times, Bloomberg and CalMatters") ?></span><span class="opacity-50"> <?php echo get_theme_mod("jcal-home-2-2", "edited stories and mentored JCal reporters at a one-week camp at CalMatters’ Sacramento newsroom.") ?></span>
                 </p>
                 <a href="<?php echo home_url("/people");?>" class="bg-tred px-3 sm:text-xl py-2 uppercase font-black inline-block">Meet the People of JCal</a>
             </div>

@@ -43,3 +43,51 @@ add_action("enqueue_block_editor_assets", function() {
 });
 
 add_filter("excerpt_length", function() {return 20;}, 999);
+
+function jcal_customizer_setup($wp_customize) {
+    $wp_customize->add_section('jcal-home', array(
+        'title' => 'Homepage text'
+    ));
+    $wp_customize->add_setting('jcal-home-1-1');
+    $wp_customize->add_control('jcal-home-1-1-control', array(
+        'label' => 'First paragraph bold text',
+        'type' => 'string',
+        'section' => 'jcal-home',
+        'settings' => 'jcal-home-1-1',
+        'default' => 'JCal empowers California students to tell the stories of their communities',
+    ));
+    $wp_customize->add_setting('jcal-home-1-2');
+    $wp_customize->add_control('jcal-home-1-2-control', array(
+        'label' => 'First paragraph unbold text',
+        'type' => 'string',
+        'section' => 'jcal-home',
+        'settings' => 'jcal-home-1-2',
+        'default' => 'by immersing them in the state’s news ecosystem through an all-inclusive, free summer program.',
+    ));
+    $wp_customize->add_setting('jcal-home-1-3');
+    $wp_customize->add_control('jcal-home-1-3-control', array(
+        'label' => 'Theme',
+        'type' => 'string',
+        'section' => 'jcal-home',
+        'settings' => 'jcal-home-1-3',
+        'default' => 'Water and Drought',
+    ));
+    $wp_customize->add_setting('jcal-home-2-1');
+    $wp_customize->add_control('jcal-home-2-1-control', array(
+        'label' => 'Second paragraph bold text',
+        'type' => 'string',
+        'section' => 'jcal-home',
+        'settings' => 'jcal-home-2-1',
+        'default' => 'Veteran journalists from the Los Angeles Times, Bloomberg and CalMatters',
+    ));
+    $wp_customize->add_setting('jcal-home-2-2');
+    $wp_customize->add_control('jcal-home-2-2-control', array(
+        'label' => 'Second paragraph unbold text',
+        'type' => 'string',
+        'section' => 'jcal-home',
+        'settings' => 'jcal-home-2-2',
+        'default' => 'edited stories and mentored JCal reporters at a one-week camp at CalMatters’ Sacramento newsroom.',
+    ));
+}
+
+add_action('customize_register', 'jcal_customizer_setup');
