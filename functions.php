@@ -47,7 +47,7 @@ add_filter("excerpt_length", function() {return 20;}, 999);
 
 function jcal_customizer_setup($wp_customize) {
     $wp_customize->add_section('jcal-home', array(
-        'title' => 'Homepage text'
+        'title' => 'JCAL HOME settings'
     ));
     $wp_customize->add_setting('jcal-home-1-1');
     $wp_customize->add_control('jcal-home-1-1-control', array(
