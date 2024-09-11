@@ -94,6 +94,39 @@ function jcal_customizer_setup($wp_customize) {
         'section' => 'jcal-home',
         'settings' => 'jcal-home-2-2',
     ));
+    $wp_customize->add_section('jcal-people', array(
+        'title' => 'JCAL PEOPLE page settings'
+    ));
+    $wp_customize->add_setting('jcal-people-1', array(
+        'default' => 'I really enjoyed the networking event. It made me realize that they are not people we as youth should be intimidated by– professional journalists want to support other youth and they are open to telling their story. I appreciated their encouragement, guidance, and openness.'
+    ));
+    $wp_customize->add_control('jcal-people-1-control', array(
+        'label' => 'Testimonial text',
+        'description' => 'Changes may not reflect in the preview',
+        'type' => 'string',
+        'section' => 'jcal-people',
+        'settings' => 'jcal-people-1',
+    ));
+    $wp_customize->add_setting('jcal-people-2', array(
+        'default' => 'Clarissa Wing'
+    ));
+    $wp_customize->add_control('jcal-people-2-control', array(
+        'label' => 'Testimonial name',
+        'description' => 'Changes may not reflect in the preview',
+        'type' => 'string',
+        'section' => 'jcal-people',
+        'settings' => 'jcal-people-2',
+    ));
+    $wp_customize->add_setting('jcal-people-3', array(
+        'default' => 'San Mateo County'
+    ));
+    $wp_customize->add_control('jcal-people-3-control', array(
+        'label' => 'Testimonial county',
+        'description' => 'Changes may not reflect in the preview',
+        'type' => 'string',
+        'section' => 'jcal-people',
+        'settings' => 'jcal-people-3',
+    ));
 }
 
 add_action('customize_register', 'jcal_customizer_setup');

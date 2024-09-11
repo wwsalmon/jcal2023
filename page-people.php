@@ -8,11 +8,11 @@
         </div>
         <div class="sm:ml-8 mt-6 sm:-mt-64 z-5 relative sm:w-[calc(100%-256px-32px-32px)]">
             <div class="bg-tblue p-4 text-white content">   
-                <span><strong>I really enjoyed the networking event.</strong> It made me realize that they are not people we as youth should be intimidated by– professional journalists want to support other youth and they are open to telling their story. I appreciated their encouragement, guidance, and openness.</span>
+                <span><?php echo get_theme_mod("jcal-people-1") ?></span>
             </div>
             <div class="border-[12px] w-0 border-l-tblue border-t-tblue border-r-transparent border-b-transparent"></div>
             <div class="mt-4 text-sm text-tgray">
-                <span class="uppercase font-bold">Clarissa Wing</span><br/><span>San Mateo County</span>
+                <span class="uppercase font-bold"><?php echo get_theme_mod("jcal-people-2", "Clarissa Wing") ?></span><br/><span><?php echo get_theme_mod("jcal-people-3", "San Mateo County") ?></span>
             </div>
         </div>
     </div>
