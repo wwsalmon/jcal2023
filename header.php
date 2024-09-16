@@ -51,11 +51,23 @@ $is_home = ($template_name === "index.php");
             <img src="<?php echo get_template_directory_uri() . "/img/logo.svg" ?>" alt="" class="w-[92px] -mt-3">
         </a>
     </div>
-    <div class="fixed w-64 h-full top-0 right-0 z-30 bg-white md:hidden py-8 px-4 -mr-64 transition-all text-right border-l" id="sidebar">
+    <div class="fixed w-64 h-full top-0 right-0 z-30 bg-white md:hidden py-8 px-4 -mr-64 transition-all text-right border-l overflow-y-auto" id="sidebar">
         <button id="sidebar-close"><i class="fa-solid fa-xmark"></i></button>
         <p class="my-16">JCal is a partnership between <a href="http://aaja.org/" class="text-tblue">AAJA</a> and <a href="https://calmatters.org/youthjournalism/" class="text-tblue">CalMatters</a></p>
         <div class="my-16 font-semibold">
-            <a href="<?php echo home_url("/"); ?>" class="block mb-6">Stories</a>
+            <?php
+            $categories = get_categories();
+            foreach($categories as $category): if ($category->name !== "Uncategorized"):
+            
+                $cat_name = $category->name;
+                $cat_explode = explode(":", $cat_name);
+                if (count($cat_explode) > 1) {
+                    $cat_year = substr($cat_explode[0], 0, 4);
+                    $cat_name = $cat_year . ": " . $cat_explode[1];
+                }
+                ?>
+                <a href="<?php echo get_category_link($category) ?>" class="block mb-6"><?php echo $cat_name;?></a>
+            <?php endif; endforeach; ?>
             <a href="<?php echo home_url("/people"); ?>" class="block mb-6">People</a>
             <a href="<?php echo home_url("/?s="); ?>" class="block mb-6">Search</a>
             <a href="<?php echo home_url("/about"); ?>" class="inline-block font-black uppercase px-2 py-1 bg-tyellow text-tdark">About JCal</span></a>
