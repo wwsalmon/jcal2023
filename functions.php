@@ -71,10 +71,19 @@ function jcal_customizer_setup($wp_customize) {
         'default' => 'Water and Drought',
     ));
     $wp_customize->add_control('jcal-home-1-3-control', array(
-        'label' => 'Theme',
+        'label' => 'Program theme',
         'type' => 'string',
         'section' => 'jcal-home',
         'settings' => 'jcal-home-1-3',
+    ));
+    $wp_customize->add_setting('jcal-home-1-4', array(
+        'default' => '2023',
+    ));
+    $wp_customize->add_control('jcal-home-1-4-control', array(
+        'label' => 'Program year',
+        'type' => 'string',
+        'section' => 'jcal-home',
+        'settings' => 'jcal-home-1-4',
     ));
     $wp_customize->add_setting('jcal-home-2-1', array(
         'default' => 'Veteran journalists from the Los Angeles Times, Bloomberg and CalMatters',

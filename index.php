@@ -1,9 +1,9 @@
 <?php get_header();?>
 <div class="w-full bg-tdark text-white pb-32">
     <p class="text-center py-16 text-xl uppercase">
-        <span class="font-light">2023 cohort</span>
+        <span class="font-light"><?php echo get_theme_mod("jcal-home-1-4", "2023") ?> cohort</span>
         <br/>
-        <span class="font-semibold text-tyellow">Water and drought</span>
+        <span class="font-semibold text-tyellow"><?php echo get_theme_mod("jcal-home-1-3", "Water and Drought") ?></span>
     </p>
     <?php
         $i = 0;
