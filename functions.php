@@ -142,3 +142,17 @@ add_action('customize_register', 'jcal_customizer_setup');
 
 add_theme_support('editor-styles');
 add_editor_style('./css/editor.css');
+
+function jcal_modify_main_query($query) {
+    if ($query -> is_home() && $query->is_main_query()) {
+        $cats = get_categories();
+        $this_cat = current(array_filter($cats, function($e) {
+            $cat_year = get_theme_mod("jcal-home-1-4", "2023");
+            return substr($e->name,0,4) === $cat_year;
+        }));
+        if (!$this_cat) return;
+        $query -> set("category__in", array($this_cat->term_id));
+    }
+}
+
+add_action("pre_get_posts", "jcal_modify_main_query");
