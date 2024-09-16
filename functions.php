@@ -156,3 +156,17 @@ function jcal_modify_main_query($query) {
 }
 
 add_action("pre_get_posts", "jcal_modify_main_query");
+
+function compare_cats($a, $b) {
+    $a_year = intval(substr($a->name, 0, 4));
+    $b_year = intval(substr($b->name, 0, 4));
+    return $b_year - $a_year;
+}
+
+function get_sorted_categories() {
+    $categories = get_categories();
+
+    usort($categories, "compare_cats");
+
+    return $categories;
+}
