@@ -20,7 +20,7 @@ $is_home = ($template_name === "index.php");
             <div class="ml-auto md:flex items-center gap-6 hidden">
                 <a href="<?php echo home_url("/?s="); ?>"><i class="fa-solid fa-magnifying-glass"></i></a>
                 <div class="font-semibold relative" id="dropdown">
-                    <span>Stories <i class="fa-solid fa-caret-down ml-1"></i></span>
+                    <span>Stories <i class="fa-solid fa-caret-down ml-1 opacity-50"></i></span>
                     <div class="hidden absolute right-0 pt-4 text-black" id="dropdown-menu">
                         <?php
                         $categories = get_categories();
