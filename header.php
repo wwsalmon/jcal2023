@@ -21,7 +21,7 @@ $is_home = ($template_name === "index.php");
                 <a href="<?php echo home_url("/?s="); ?>"><i class="fa-solid fa-magnifying-glass"></i></a>
                 <div class="font-semibold relative" id="dropdown">
                     <span>Stories <i class="fa-solid fa-caret-down ml-1 opacity-50"></i></span>
-                    <div class="hidden absolute right-0 pt-4 text-black" id="dropdown-menu">
+                    <div class="hidden absolute right-0 pt-4 text-black z-30" id="dropdown-menu">
                         <?php
                         $categories = get_categories();
                         foreach($categories as $category): if ($category->name !== "Uncategorized"):
