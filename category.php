@@ -19,7 +19,7 @@ if (count($cat_explode) > 1) {
 <div class="max-w-2xl mx-auto px-4">
     <div class="absolute left-8 w-48 hidden xl:block">
         <div class="bg-tblue h-[6px] w-12 mb-8"></div>
-        <div class="uppercase font-black mb-8"><span>Other years</span></div>
+        <div class="uppercase font-black mb-8"><span>Cohorts</span></div>
         <?php
         $categories = get_sorted_categories();
         foreach($categories as $category): if ($category->name !== "Uncategorized"):
