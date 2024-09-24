@@ -16,8 +16,8 @@ if (count($cat_explode) > 1) {
     </div>
     <h1 class="font-black text-5xl md:text-6xl mt-4"><?php echo $cat_name ?></h1>
 </div>
-<div class="max-w-2xl mx-auto px-4">
-    <div class="absolute left-8 w-48 hidden xl:block">
+<div class="max-w-7xl mx-auto px-4 flex pb-32">
+    <div class="w-48 mr-8 flex-shrink-0 hidden lg:block">
         <div class="bg-tblue h-[6px] w-12 mb-8"></div>
         <div class="uppercase font-black mb-8"><span>Cohorts</span></div>
         <?php
@@ -37,30 +37,12 @@ if (count($cat_explode) > 1) {
             <?php
             endif;
         endforeach;
-    ?>
+        ?>
     </div>
-    <?php if (have_posts()): while (have_posts()): the_post(); ?>
-    <a href="<?php the_permalink()?>" class="w-full mb-24 block">
-    <div class="w-full">
-        <?php echo get_the_post_thumbnail( null, "full", array("class" => "w-full block mb-8 aspect-[3/2] object-cover") )?>
+    <div id="category-masonry" class="w-full">
+        <?php if (have_posts()): while (have_posts()): the_post(); ?>
+        <?php get_template_part("template_parts/four-post"); ?>
+        <?php endwhile; endif; ?>
     </div>
-    <div class="">
-        <h2 class="font-bold text-2xl sm:text-3xl !leading-[1.15] mb-8"><?php if (get_post_meta(get_the_ID(), "is_media_story", true)) echo "<i class='fa-solid fa-circle-play'></i> ";?><?php the_title() ?></h2>
-        <p class="opacity-50 mb-8 text-lg sm:text-xl !leading-normal"><?php echo get_the_excerpt(); ?></p>
-        <div class="mb-8">
-            <span class="font-bold uppercase">
-                <?php
-                $authors = get_coauthors();
-                foreach($authors as $key=>$author) {
-                    echo $author->get("display_name");
-                    if ($key != (count($authors) - 1)) {echo ", ";}
-                }
-                ?>
-            </span>
-        </div>
-        <?php get_template_part("template_parts/published-in"); ?>
-    </div>
-</a>
-    <?php endwhile; endif; ?>
 </div>
 <?php get_footer();?>

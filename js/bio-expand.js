@@ -26,6 +26,7 @@ window.onload = () => {
 
     const hm1 = document.getElementById("home-masonry-1");
     const hm2 = document.getElementById("home-masonry-2");
+    const cm = document.getElementById("category-masonry");
 
     if (hm1) {
         let mg1 = new MagicGrid({container: "#home-masonry-1", static: true, gutter: 32});
@@ -35,5 +36,10 @@ window.onload = () => {
     if (hm2) {
         let mg2 = new MagicGrid({container: "#home-masonry-2", static: true, gutter: 32});
         mg2.listen();
+    }
+    
+    if (cm) {
+        let mg3 = new MagicGrid({container: "#category-masonry", static: true, gutter: 32});
+        mg3.listen();
     }
 }
