@@ -37,7 +37,20 @@ $is_home = ($template_name === "index.php");
                         <?php endif; endforeach; ?>
                     </div>
                 </div>
-                <a href="<?php echo home_url("/people"); ?>" class="font-semibold">People</a>
+                <div class="font-semibold relative jcal-dropdown">
+                    <span>People <i class="fa-solid fa-caret-down ml-1 opacity-50"></i></span>
+                    <div class="hidden absolute right-0 pt-4 text-black z-30 jcal-dropdown-menu">
+                        <?php
+                        $people_page = get_page_by_path("people");
+                        $people_children = get_pages('sort_column=menu_order&title_li=&child_of=' . $people_page->ID . '&echo=0');
+                        $curr_year = get_theme_mod("jcal-home-1-4");
+                        ?>
+                        <a href="<?php echo get_page_link($people_page) ?>" class="px-4 py-2 block bg-white hover:bg-gray-100 whitespace-nowrap"><?php echo $curr_year;?></a>
+                        <?php foreach ($people_children as $child_page): ?>
+                            <a href="<?php echo get_page_link($child_page); ?>" class="px-4 py-2 block bg-white hover:bg-gray-100 whitespace-nowrap"><?php echo $child_page->post_title; ?></a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
                 <a href="<?php echo home_url("/about"); ?>" class="font-black uppercase px-2 py-1 bg-tyellow text-tdark">About<span class="hidden lg:inline"> JCal</span></a>
             </div>
             <button class="md:hidden ml-auto" id="sidebar-open"><i class="fa-solid fa-bars"></i></button>
