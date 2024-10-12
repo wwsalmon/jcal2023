@@ -19,9 +19,9 @@ $is_home = ($template_name === "index.php");
             <p class="hidden sm:block"><span class="hidden lg:inline">A partnership between </span><a href="http://aaja.org/" class="<?php if ($is_home) echo "text-tyellow"; else echo "text-tblue" ?>">AAJA</a><span class="hidden lg:inline"> and </span><span class="inline lg:hidden"> / </span><a href="https://calmatters.org/youthjournalism/" class="<?php if ($is_home) echo "text-tyellow"; else echo "text-tblue" ?>">CalMatters</a></p>
             <div class="ml-auto md:flex items-center gap-6 hidden">
                 <a href="<?php echo home_url("/?s="); ?>"><i class="fa-solid fa-magnifying-glass"></i></a>
-                <div class="font-semibold relative" id="dropdown">
+                <div class="font-semibold relative jcal-dropdown">
                     <span>Stories <i class="fa-solid fa-caret-down ml-1 opacity-50"></i></span>
-                    <div class="hidden absolute right-0 pt-4 text-black z-30" id="dropdown-menu">
+                    <div class="hidden absolute right-0 pt-4 text-black z-30 jcal-dropdown-menu">
                         <?php
                         $categories = get_sorted_categories();
                         foreach($categories as $category): if ($category->name !== "Uncategorized"):
@@ -37,11 +37,6 @@ $is_home = ($template_name === "index.php");
                         <?php endif; endforeach; ?>
                     </div>
                 </div>
-                <style>
-                    #dropdown:hover #dropdown-menu {
-                        display: block;
-                    }
-                </style>
                 <a href="<?php echo home_url("/people"); ?>" class="font-semibold">People</a>
                 <a href="<?php echo home_url("/about"); ?>" class="font-black uppercase px-2 py-1 bg-tyellow text-tdark">About<span class="hidden lg:inline"> JCal</span></a>
             </div>
