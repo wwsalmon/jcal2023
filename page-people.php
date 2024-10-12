@@ -16,6 +16,10 @@
             </div>
         </div>
     </div>
+    <?php
+    $active_year = get_theme_mod("jcal-home-1-4");
+    get_template_part( "template_parts/people-years", null, array("active_year" => $active_year));
+    ?>
     <div class="max-w-3xl mx-auto px-4 pb-24">
         <?php the_content() ?>
     </div>

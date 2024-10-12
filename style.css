@@ -112,3 +112,55 @@ body {
 .wp-block-audio {
   width: 100%;
 }
+
+.jcal-arrow:not(:first-of-type) {
+  position: relative;
+  left: -24px;
+}
+
+.jcal-arrow-middle {
+  background-color: #FED78F;
+}
+
+.jcal-arrow-active .jcal-arrow-middle, .jcal-arrow-active .jcal-arrow-before::after, .jcal-arrow-active .jcal-arrow-after::after {
+  background-color: #2C5F93;
+  color: white;
+}
+
+.jcal-arrow-before {
+  position: relative;
+  height: 100%;
+  width: 24px;
+  background-color: white;
+  clip-path: polygon(0% 50%, 80% 0%, 100% 0%, 100% 100%, 80% 100%);
+}
+
+.jcal-arrow-before::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 24px;
+  background-color: #FED78F;
+  clip-path: polygon(20% 50%, 100% 0%, 100% 100%);
+}
+
+.jcal-arrow-after {
+  position: relative;
+  height: 100%;
+  width: 24px;
+  background-color: white;
+  clip-path: polygon(0% 0%, 100% 0%, 20% 50%, 100% 100%, 0% 100%);
+}
+
+.jcal-arrow-after::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 24px;
+  background-color: #FED78F;
+  clip-path: polygon(0% 0%, 80% 0%, 0% 50%, 80% 100%, 0% 100%);
+}

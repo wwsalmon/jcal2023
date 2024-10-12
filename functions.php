@@ -170,3 +170,29 @@ function get_sorted_categories() {
 
     return $categories;
 }
+
+// from https://wordpress.stackexchange.com/questions/55301/is-there-a-default-template-file-for-child-pages-subpages
+function child_templates($template) {
+    global $post;
+
+    if ($post->post_parent) {
+        // get top level parent page
+        $parent = get_post(
+            reset(array_reverse(get_post_ancestors($post->ID)))
+        );
+
+        // find the child template based on parent's slug or ID
+        $child_template = locate_template(
+            [
+                'child-' . $parent->post_name . '.php',
+                'child-' . $parent->ID . '.php',
+                'child.php',
+            ]
+        );
+
+        if ($child_template) return $child_template;
+    }
+
+    return $template;
+}
+add_filter( 'page_template', 'child_templates' );
