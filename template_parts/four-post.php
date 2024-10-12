@@ -1,4 +1,4 @@
-<a href="<?php the_permalink()?>" class="w-[calc(100%-32px)] -ml-4 md:ml-0 md:w-[calc(50%-32px)] flex md:block gap-4 md:[&:nth-child(2)]:pt-16">
+<a href="<?php the_permalink()?>" class="w-[calc(100%-32px)] -ml-4 md:ml-0 md:w-[calc(50%-32px)] flex md:block gap-4 md:[&:nth-child(2)]:pt-16 pb-8">
     <div class="w-24 sm:w-40 md:w-full flex-shrink-0">
         <?php echo get_the_post_thumbnail( null, "full", array("class" => "w-full block mb-4 md:mb-8 aspect-[3/2] object-cover") )?>
     </div>
