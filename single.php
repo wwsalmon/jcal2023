@@ -17,6 +17,7 @@
                     <p class="sm:text-xl uppercase !leading-[1.15]">
                         <?php
                         $cat_program = "";
+                        $cat_year = get_theme_mod("jcal-home-1-4");
                         $cat_name = "JCal Student Work";
                         $cats = get_the_category();
                         if ($cats) {
@@ -24,6 +25,7 @@
                             $cat_explode = explode(":", $cat->name);
                             if (count($cat_explode) > 1) {
                                 $cat_program = $cat_explode[0];
+                                $cat_year = substr($cat_program, 0, 4);
                                 $cat_name = $cat_explode[1];
                             } else {
                                 $cat_name = $cat->name;
@@ -64,7 +66,7 @@
                 <div class="max-w-2xl mx-auto px-4 my-16">
                     <div class="p-5 bg-[#EEEEEE]">
                         <p class="text-lg font-bold text-tblue uppercase mb-2">About this story</p>
-                        <p>This story was produced by a reporter in the 2023 cohort of the AAJA/Calmatters JCal program and originally <a href="<?php echo $published_url?>" class="underline text-tblue">published in <?php echo $publication_name; ?>.</a></p>
+                        <p>This story was produced by a reporter in the <?php echo $cat_year; ?> cohort of the AAJA/Calmatters JCal program and originally <a href="<?php echo $published_url?>" class="underline text-tblue">published in <?php echo $publication_name; ?>.</a></p>
                     </div>
                 </div>
             <?php endif; ?>
